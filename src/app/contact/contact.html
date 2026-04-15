@@ -3,6 +3,25 @@
 
   <p>Let’s work together or build something interesting.</p>
 
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Your Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="your@email.com">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea matInput formControlName="message" placeholder="How can I help you?"></textarea>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="!contactForm.valid">Send Message</button>
+  </form>
+
   <div class="contact-box">
     <p><strong>Email:</strong> thomasgolden1258@gmail.com</p>
     <p><strong>GitHub:</strong> github.com/thrillzz-point</p>
